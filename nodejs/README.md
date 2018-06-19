@@ -14,7 +14,6 @@ total payments from the state of Maryland. For instance, given the following 3 r
 | 2008         | BCCC          | FedEx         | 10087      | 600.00
 | 2008         | UMCP          | UPS           | 10087      |  70.00
 | 2008         | UMCP          | UPS           | 21111      |  80.00
-|--------------|---------------|---------------|------------|--------
 
 Zip code 10087 would have a total of $670 and zip code 21111 would be $80.
 
