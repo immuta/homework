@@ -31,3 +31,8 @@ one request can be made per second. You must abide by that restriction. Also, yo
 
 One final requirement. The environment where your application is going to be deployed is still in flux, so your boss has asked that you
 finish up your co-workers Dockerfile to run the application as a Docker container.
+
+## Wrap it up
+
+When you are finished, tar.gz all the files (minus node_modules please), and send them to the person that emailed you the assignment.
+You may need to send a Google Drive or similar link if your email provider doesn't like zipped up javascript files.
