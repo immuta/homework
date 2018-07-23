@@ -1,0 +1,14 @@
+{"namespace": "immuta.avro",
+ "type": "record",
+ "name": "Payment",
+ "fields": [
+    {"name": "Agency", "type": "string"},
+    {"name": "Vendor", "type": "string"},
+    {"name": "Amount", "type": "double"},
+    {"name": "Year", "type": "int"},
+    {"name": "Zipcode", "type": "string"},
+    {"name": "Lat", "type": "double"},
+    {"name": "Long", "type": "double"},
+    {"name": "Geohash", "type": "string"}
+  ]
+}
