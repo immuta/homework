@@ -23,4 +23,8 @@ of the total amount of available data. So once this moves to production, your ap
 to handle a large amount of data.
  
 Knowing that one of the possible ways to write out parquet files is by starting with Avro, the data scientist has provided 
-an Avro schema file (payment.avsc) as a representation of the schema she is expecting.
+an Avro schema file (payment.avsc) as a representation of the schema she is expecting. Using Avro is not required, just one 
+possibility.
+
+The pom.xml file contains some libraries that may be helpful for the assignment, but feel free to use whatever libraries 
+you are comfortable with.
