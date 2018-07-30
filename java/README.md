@@ -28,3 +28,8 @@ possibility.
 
 The pom.xml file contains some libraries that may be helpful for the assignment, but feel free to use whatever libraries 
 you are comfortable with.
+
+## Wrap it up
+
+When you are finished, tar.gz all the files (only include files you would commit to source control), and send them to the person that emailed you the assignment.
+You may need to send a Google Drive or similar link if your email provider complains.
