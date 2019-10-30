@@ -10,7 +10,7 @@ server.connection({
 
 // TODO load the data from external APIs and figure out the top zip codes by amounts
 // Expose that data for the UI
-// Maryland Data URL: https://data.maryland.gov/resource/3ycv-rxy9.json
+// Maryland Data URL: https://opendata.maryland.gov/resource/3ycv-rxy9.json
 
 server.register([{ register: require('inert') }], function (err) {
     if (err) {
