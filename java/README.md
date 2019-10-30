@@ -11,7 +11,7 @@ runs the algorithm against a single geohash at a time.
 
 ## Assignment
 
-You must pull data from https://data.maryland.gov/Budget/State-of-Maryland-Payments-Data-FY2008-to-FY2017/gja3-vy5r. 
+You must pull data from https://opendata.maryland.gov/Budget/State-of-Maryland-Payments-Data-FY2008-to-FY2017/gja3-vy5r. 
 Because this data only contains zip codes, you'll need to also call out to
 https://nominatim.openstreetmap.org to map zip codes to latitude and longitude since you need coordinates in order to
 generate the geohash.

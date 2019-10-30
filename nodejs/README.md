@@ -19,7 +19,7 @@ Zip code 10087 would have a total of $670 and zip code 21111 would be $80.
 
 ## Assignment
 
-You must pull data from https://data.maryland.gov/Budget/State-of-Maryland-Payments-Data-FY2008-to-FY2017/gja3-vy5r, but for this execise,
+You must pull data from https://opendata.maryland.gov/Budget/State-of-Maryland-Payments-Data-FY2008-to-FY2017/gja3-vy5r, but for this execise,
 your boss is only interested in Fiscal Year 2015. Because this data only contains zip codes, you'll need to also call out to
 https://nominatim.openstreetmap.org to map zip codes to latitude and longitude.
 
