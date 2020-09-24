@@ -1,9 +1,8 @@
 'use strict';
 
-var Hapi = require('hapi');
+const Hapi = require('@hapi/hapi');
 
-var server = new Hapi.Server();
-server.connection({
+const server = new Hapi.Server({
     port: 3000,
     host: '0.0.0.0'
 });
@@ -12,24 +11,20 @@ server.connection({
 // Expose that data for the UI
 // Maryland Data URL: https://opendata.maryland.gov/resource/3ycv-rxy9.json
 
-server.register([{ register: require('inert') }], function (err) {
-    if (err) {
-        return console.error(err);
-    }
-
+server.register([{ plugin: require('@hapi/inert') }]).then(() => {
     server.route({
         method: 'GET',
         path: '/',
-        handler: function (request, reply) {
-            return reply.file('ui/index.html');
+        handler: function (_request, h) {
+            return h.file('ui/index.html');
         }
     });
 
     server.route({
         method: 'GET',
         path: '/app.js',
-        handler: function (request, reply) {
-            return reply.file('ui/app.js');
+        handler: function (_request, h) {
+            return h.file('ui/app.js');
         }
     });
 
@@ -46,11 +41,7 @@ server.register([{ register: require('inert') }], function (err) {
     });
 
 
-    server.start(function (err) {
-        if (err) {
-            return console.error(err);
-        }
-        console.log('Server started');
-    });
+    return server.start();
+}).then(() => {
+    console.log('Server started');
 });
-
