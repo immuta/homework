@@ -1,8 +1,9 @@
-from elasticsearch import Elasticsearch, helpers
 import sys, json, time
 
-API_URL = 'http://stream:5000/sentences'
-ELASTIC_INDEX = 'sentences'
+from elasticsearch import Elasticsearch, helpers
+
+API_URL = "http://stream:5000/sentences"
+ELASTIC_INDEX = "sentences"
 
 es = Elasticsearch()
 es = Elasticsearch(["elastic"], port=9200)

@@ -7,7 +7,7 @@ from randomtimestamp import randomtimestamp
 app = Flask(__name__)
 gen = DocumentGenerator()
 
-@app.route("/paragraphs", methods=['GET'])
+@app.route("/paragraphs", methods=["GET"])
 def paragraphs():
     resp_arr = []
     resp_len = randint(0,5)
@@ -20,7 +20,7 @@ def paragraphs():
         resp_arr.append(resp)
     return jsonify(resp_arr)
 
-@app.route("/sentences", methods=['GET'])
+@app.route("/sentences", methods=["GET"])
 def sentences():
     resp_arr = []
     resp_len = randint(0,5)
@@ -34,4 +34,4 @@ def sentences():
     return jsonify(resp_arr)
 
 if __name__ == "__main__":
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    app.run(debug=True, host="0.0.0.0", port=5000)
