@@ -1,5 +1,21 @@
 # Immuta Candidate Homework - Internal Infrastructure Services
 
+## Overview
+
+This assignment will test your ability to write code and deploy multiple software components
+in an orchestrated fashion. Before you begin, you will need to install the following
+dependencies on your machine:
+
+- Docker: https://docs.docker.com/get-docker/
+- Docker Compose: https://docs.docker.com/compose/install/
+
+Below is a detailed desciption of the assignment. The precise assignment requirements
+can be found in the [Your Tasks](#your-tasks) section.
+
+Once the assignment is complete, you can create a tar/zip archive and email it back to us,
+or create a private github repository and invite the hiring manager. Please do not create
+a public github fork of this repository.
+
 ## Scenario
 
 Your team is in the middle of building a data pipeline that extracts data from an HTTP stream API to
@@ -64,6 +80,5 @@ In order to complete this assignment, you must:
 - Deploy all containers using `docker-compose`.
 - Open Kibana in your local browser, and take screenshots of you querying the `sentences` and
     `paragraphs` Elastic indexes.
-
-
+- [Optional] Add any improvements that you see fit to the docker builds or docker-compose file.
 
