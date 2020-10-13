@@ -1,0 +1,49 @@
+---
+version: '3.7'
+services:
+
+  stream:
+    image: data-api:latest
+    container_name: stream
+    ports:
+    - 5000:5000
+
+  sentence_processor:
+    image: processor:latest
+    container_name: sentence-processor
+    environment:
+    - "MY_ENV_VAR_1=value1"
+    - "MY_ENV_VAR_2=value2"
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.4.0
+    container_name: elastic
+    environment:
+    - node.name=elasticsearch
+    - cluster.initial_master_nodes=elasticsearch
+    - cluster.name=docker-cluster
+    - bootstrap.memory_lock=true
+    - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+    - esdata01:/usr/share/elasticsearch/data
+    ports:
+    - 9200:9200
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.4.0
+    container_name: kibana
+    ports:
+    - 5601:5601
+
+volumes:
+  esdata01:
+    driver: local
+
+networks:
+  default:
+    external:
+      name: homework
