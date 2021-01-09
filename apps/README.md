@@ -86,7 +86,7 @@ priority, as outlined below:
             <td>APPS-1003</td>
             <td>Data caching</td>
             <td>
-                Since we're fetching data that are quite stale, and especially given the overhead of the 
+                Since we're fetching data that are quite static, and especially given the overhead of the 
                 request rate limits (see ticket APPS-1001), it makes sense to cache the results, either
                 upon service startup or upon the first request, to improve the user experience a little.
                 I'm told we can use any data persistence method we'd like here. The important thing is
@@ -118,7 +118,7 @@ priority, as outlined below:
             <td>Simplify Docker Compose deployment</td>
             <td>
                 One of the senior engineers on the DevOps team mentioned that with docker compose,
-                there's a way to build the app and avoid having having to manually build the image
+                there's a way to build the app and avoid having to manually build the image
                 of each service ahead of time.
             </td>
             <td>Low</td>
