@@ -131,8 +131,7 @@ priority, as outlined below:
 You're tasked with completing the tasks above. You don't have to complete all of them, and there's definitely not
 a single _correct_ solution. At the very least, try to strike out high-priority tasks if you can.
 
-1. Run the application using Docker Compose (see [prerequisites](#prerequisites) below) and take note
-   of the steps you've taken to do so.
+1. Run the application using Docker Compose and take note of the steps you've taken to do so.
 1. Take some time to familiarize yourself with the structure of the app and with the code.
 1. Identify the aforementioned tasks and try to resolve them. Try to focus on the more important tasks
    first.
