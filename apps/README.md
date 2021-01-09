@@ -128,8 +128,8 @@ priority, as outlined below:
 
 ### Instructions
 
-You're tasked with completing the tasks above. You don't have to complete all of them, and there's definitely not
-a single _correct_ solution. At the very least, try to strike out high-priority tasks if you can.
+You're tasked with completing the above tickets from the board. You don't have to complete all of them, and there
+definitely isn't a single _correct_ solution. At the very least, try to strike out high-priority tasks if you can.
 
 1. Run the application using Docker Compose and take note of the steps you've taken to do so.
 1. Take some time to familiarize yourself with the structure of the app and with the code.
@@ -143,13 +143,15 @@ a single _correct_ solution. At the very least, try to strike out high-priority 
    - Challenges you've faced and how you've solved them
    - Things you think you could improve
    - Anything that comes to mind
-1. Compress your solution in a `.tar.gz` file and send it back to your interviewer or as otherwise instructed.
+1. **Please do not fork this repository nor open any pull request**. Instead, please clone it locally
+   and complete the solution. When you're done, compress your solution in a `.tar.gz` file and send it back to your
+   interviewer or as otherwise instructed.
 1. Good luck!
 
 **Technical details and guidelines:**
 
 * Backend:
-  - A Node.js app already equipped with a [hapi server](https://hapi.dev/). You can use a different web framework
+  - A Node.js app that's already equipped with a [hapi server](https://hapi.dev/). You can use a different web framework
     of your choice if you'd like.
   - The Node.js backend has to make requests to the proxy server, and shall not make requests outside
     the internal Docker network. Requests outside the internal docker network are invalid and will be rejected by
