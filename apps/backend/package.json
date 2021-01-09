@@ -1,0 +1,14 @@
+{
+  "name": "api-node",
+  "version": "0.1.0",
+  "description": "Immuta Apps Homework Node API",
+  "main": "server.js",
+  "author": "Immuta Applied Engineering <ae@immuta.com>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "@hapi/hapi": "^20.0.3",
+    "@hapi/inert": "^6.0.3",
+    "axios": "^0.21.1"
+  }
+}
