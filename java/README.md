@@ -11,12 +11,12 @@ runs the algorithm against a single geohash at a time.
 
 ## Assignment
 
-You must pull data from https://opendata.maryland.gov/Budget/State-of-Maryland-Payments-Data-FY2008-to-FY2017/gja3-vy5r. 
+You must pull data from https://opendata.maryland.gov/Budget/State-of-Maryland-Payments-Data-FY2008-to-FY2020/7syw-q4cy. 
 Because this data only contains zip codes, you'll need to also call out to
 https://nominatim.openstreetmap.org to map zip codes to latitude and longitude since you need coordinates in order to
 generate the geohash.
 
-Nominatim has a very strict usage policy and only allows one request per second. You must abide by that restriction.
+Nominatim has a very strict usage policy (https://operations.osmfoundation.org/policies/nominatim/) and only allows one request per second. You must abide by that restriction.
 
 For the purposes of this exercise, assume the Maryland Open Data Portal is currently only returning a fraction of a percent
 of the total amount of available data. So once this moves to production, your application and the output should be written

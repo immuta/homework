@@ -19,12 +19,12 @@ Zip code 10087 would have a total of $670 and zip code 21111 would be $80.
 
 ## Assignment
 
-You must pull data from https://opendata.maryland.gov/Budget/State-of-Maryland-Payments-Data-FY2008-to-FY2017/gja3-vy5r, but for this execise,
+You must pull data from https://opendata.maryland.gov/Budget/State-of-Maryland-Payments-Data-FY2008-to-FY2020/7syw-q4cy, but for this execise,
 your boss is only interested in Fiscal Year 2015. Because this data only contains zip codes, you'll need to also call out to
 https://nominatim.openstreetmap.org to map zip codes to latitude and longitude.
 
 Due to rate limits and usage agreements, your boss wants your application to pull the data once when the service starts and keep the data
-in memory to serve all requests. Nominatim has a very strict usage policy on how many requests can be made and how often. Due to these
+in memory to serve all requests. Nominatim has a very strict usage policy (https://operations.osmfoundation.org/policies/nominatim/) on how many requests can be made and how often. Due to these
 restrictions, your boss has decided to only show the top 3 points on the map. Keep in mind, that Nominatim's policy states that only
 one request can be made per second. You must abide by that restriction. Also, your boss is a bit fickle and just last week wanted the top
 10 points instead of 3. So keep that in mind.
