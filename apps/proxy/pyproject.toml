@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "countries-proxy"
+version = "0.1.0"
+description = "A proxy for the Applications team's homework assignment"
+authors = ["Immuta Applied Engineering <ae@immuta.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+Flask = "==1.1.2"
+Flask-Limiter = "==1.4"
+gevent = "^20.6.2"
+requests = "==2.24.0"
+Werkzeug = "==0.16.1"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.4.3"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

@@ -1,0 +1,40 @@
+.wrapper {
+  height: 100vh;
+  width: 100vw;
+
+  .title-bar {
+    height: 50px;
+    z-index: 99999999;
+    background-color: #747a7d;
+    color: #fff;
+  }
+
+  .content {
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 50px);
+
+    .results {
+      max-width: 550px;
+      overflow-y: scroll;
+      height: 100%;
+      width: 35%;
+
+      .loading-spinner {
+        width: 100%;
+        .spinner {
+          margin:0 auto;
+        }
+      }
+    }
+
+    .map-wrapper {
+      width: 80%;
+
+      .map {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+}

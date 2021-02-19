@@ -1,0 +1,51 @@
+<div class="wrapper">
+  <mat-toolbar color="primary">
+    <span>Random Facts about Countries</span>
+  </mat-toolbar>
+  <div class="content">
+    <div class="results">
+      <div>
+        <mat-list>
+          <div mat-subheader>Countries with most neighbors</div>
+          <div class="loading-spinner">
+            <mat-spinner class="spinner" color="accent" diameter="25"></mat-spinner>
+          </div>
+          <mat-list-item
+            *ngFor="let country of countriesWithMostNeighbors; let i = index"
+            (mouseenter)="showMapPopup(country, 'MOST_NEIGHBORS')"
+            (mouseleave)="clearMapPopups()"
+          >
+            <img src="{{country.flag}}" mat-list-icon/>
+            <div mat-line>{{(i + 1)}}. {{country.name}}</div>
+            <div mat-line> {{country.borders.length}} neighboring countries</div>
+          </mat-list-item>
+        </mat-list>
+      </div>
+      <div>
+        <mat-list>
+          <div mat-subheader>Most populated countries</div>
+          <div class="loading-spinner">
+            <mat-spinner class="spinner" color="accent" diameter="25"></mat-spinner>
+          </div>
+          <mat-list-item
+            *ngFor="let country of mostPopulatedCountries; let i = index"
+            (mouseenter)="showMapPopup(country, 'MOST_POPULATED')"
+            (mouseleave)="clearMapPopups()"
+          >
+            <img src="{{country.flag}}" mat-list-icon/>
+            <div mat-line>{{(i + 1)}}. {{country.name}}</div>
+            <div mat-line>Population: {{country.population}} people</div>
+          </mat-list-item>
+        </mat-list>
+      </div>
+    </div>
+    <div class="map-wrapper">
+      <div class="map"
+           leaflet
+           [leafletOptions]="mapOptions"
+           [leafletLayers]="layers"
+      >
+      </div>
+    </div>
+  </div>
+</div>
