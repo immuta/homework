@@ -1,4 +1,4 @@
-# Immuta Applications Homework
+# Immuta Apps & Integrations Homework
 
 - [Background](#background)
 - [Your Assignment](#your-assignment)
@@ -7,10 +7,9 @@
   * [Instructions](#instructions)
 
 
-
 ## Background
 
-Welcome to Immuta's Applications team homework task!
+Welcome to Immuta's Apps & Integrations homework task!
 
 Here's the story: a teammate started working on a small web application that
 displays a world map with a few random facts about countries. Unfortunately,
@@ -57,7 +56,7 @@ priority, as outlined below:
     </thead>
     <tbody>
         <tr>
-            <td>APPS-1001</td>
+            <td>INT-1001</td>
             <td>Rate-limited HTTP requests</td>
             <td>
                 I got word from the security team that we are
@@ -70,7 +69,7 @@ priority, as outlined below:
             <td>High</td>
         </tr>
         <tr>
-            <td>APPS-1002</td>
+            <td>INT-1002</td>
             <td>Fix Docker Build</td>
             <td>
                 I've started writing a Dockerfile for the web application, but it could use
@@ -83,11 +82,11 @@ priority, as outlined below:
             <td>High</td>
         </tr>
         <tr>
-            <td>APPS-1003</td>
+            <td>INT-1003</td>
             <td>Data caching</td>
             <td>
                 Since we're fetching data that are quite static, and especially given the overhead of the 
-                request rate limits (see ticket APPS-1001), it makes sense to cache the results, either
+                request rate limits (see ticket INT-1001), it makes sense to cache the results, either
                 upon service startup or upon the first request, to improve the user experience a little.
                 I'm told we can use any data persistence method we'd like here. The important thing is
                 that we optimize the performance of requests to the backend.
@@ -95,7 +94,7 @@ priority, as outlined below:
             <td>High</td>
         </tr>
         <tr>
-            <td>APPS-1004</td>
+            <td>INT-1004</td>
             <td>UI bug - loading spinners spin indefinitely</td>
             <td>
                 The spinners keep being displayed indefinitely even after
@@ -104,7 +103,7 @@ priority, as outlined below:
             <td>High</td>
         </tr>
         <tr>
-            <td>APPS-1005</td>
+            <td>INT-1005</td>
             <td>Dynamic retrieval of top N results</td>
             <td>
                 Right now, we fetch the top 5 results from each metric. It would be great to allow users
@@ -114,7 +113,7 @@ priority, as outlined below:
             <td>Medium</td>
         </tr>
         <tr>
-            <td>APPS-1006</td>
+            <td>INT-1006</td>
             <td>Simplify Docker Compose deployment</td>
             <td>
                 One of the senior engineers on the DevOps team mentioned that with docker compose,
@@ -159,8 +158,8 @@ definitely isn't a single _correct_ solution. At the very least, try to strike o
   - The only hard constraint is that you use the proxy to gather information about world countries.
 * Frontend:
   - Built with Angular 10
-  - It's pretty much done. Aside from task APP-1004, there isn't much you will need to change in the UI, unless you
-    feel like like something needs to be changed.
+  - Aside from task INT-1004, the UI is nearly done and there isn't much you will need to change in the UI, unless you
+    feel like like you want to change it.
   - The app is built and bundled together with the backend (same docker container).
 * Proxy:
   - The proxy is off limits. You should not refactor the proxy, just make API calls to it from your
