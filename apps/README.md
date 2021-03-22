@@ -64,7 +64,7 @@ priority, as outlined below:
                 I've initially stubbed out the Node.js backend
                 so that it hit the API directly.<br/>Unfortunately, we have to go through
                 a proxy instead of the API.<br/><br/>The main constraint of the proxy is that it
-                has a request rate limit of <b>10 requests per second</b>.
+                has a request rate limit of <b>50 requests per second</b>.
             </td>
             <td>High</td>
         </tr>

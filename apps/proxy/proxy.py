@@ -36,7 +36,7 @@ app = Flask(__name__)
 limiter = Limiter(
     app,
     key_func=get_remote_address,
-    default_limits=["10 per 1 seconds"],
+    default_limits=["50 per 1 seconds"],
     default_limits_deduct_when=lambda r: r.status_code == 200,
     headers_enabled=True,
 )
