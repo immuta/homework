@@ -14,7 +14,7 @@ Welcome to Immuta's Apps & Integrations homework task!
 Here's the story: a teammate started working on a small web application that
 displays a world map with a few random facts about countries. Unfortunately,
 that teammate needed to switch gears, therefore you have been tasked with finishing what
-they started.  It's a fairly simple application with a Node.js backend and an
+they started. It's a fairly simple application with a Node.js backend and an
 Angular 10 frontend. It makes a few requests to a [REST API](#api-reference)
 to fetch and process information about the countries of the world:
 
