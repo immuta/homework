@@ -13,10 +13,10 @@ Welcome to Immuta's Apps & Integrations homework task!
 
 Here's the story: a teammate started working on a small web application that
 displays a world map with a few random facts about countries. Unfortunately,
-that teammate needed to switch gears and you have been tasked with finishing what
-they started. It's a fairly simple application with a Node.js backend and an
-Angular 10 frontend. It makes a few requests to [an external REST API](https://restcountries.eu/)
-to fetch information about the countries of the world:
+that teammate needed to switch gears, therefore you have been tasked with finishing what
+they started.  It's a fairly simple application with a Node.js backend and an
+Angular 10 frontend. It makes a few requests to a [REST API](#api-reference)
+to fetch and process information about the countries of the world:
 
 * Countries with the most neighboring countries
 * Most populated countries
@@ -59,12 +59,8 @@ priority, as outlined below:
             <td>INT-1001</td>
             <td>Rate-limited HTTP requests</td>
             <td>
-                I got word from the security team that we are
-                <b>not allowed</b> to have our Node.js backend reach the internet.
-                I've initially stubbed out the Node.js backend
-                so that it hit the API directly.<br/>Unfortunately, we have to go through
-                a proxy instead of the API.<br/><br/>The main constraint of the proxy is that it
-                has a request rate limit of <b>50 requests per second</b>.
+                We have to make our requests to the API that's part of this project.<br/><br/>The main constraint of the
+                API is that it has a request rate limit of <b>50 requests per second</b>.
             </td>
             <td>High</td>
         </tr>
@@ -86,6 +82,7 @@ priority, as outlined below:
             <td>Data caching</td>
             <td>
                 Since we're fetching data that are quite static, and especially given the overhead of the 
+                request rate limits (see ticket INT-1001), it makes sense to cache the results, either
                 request rate limits (see ticket INT-1001), it makes sense to cache the results, either
                 upon service startup or upon the first request, to improve the user experience a little.
                 I'm told we can use any data persistence method we'd like here. The important thing is
@@ -147,27 +144,67 @@ definitely isn't a single _correct_ solution. At the very least, try to strike o
    interviewer or as otherwise instructed.
 1. Good luck!
 
-**Technical details and guidelines:**
+#### Technical Details and Guidelines
 
-* Backend:
+* **Backend**:
   - A Node.js app that's already equipped with a [hapi server](https://hapi.dev/). You can use a different web framework
     of your choice if you'd like.
-  - The Node.js backend has to make requests to the proxy server, and shall not make requests outside
+  - The Node.js backend has to make requests to the API server, and shall not make requests outside
     the internal Docker network. Requests outside the internal docker network are invalid and will be rejected by
     the security team.
-  - The only hard constraint is that you use the proxy to gather information about world countries.
-* Frontend:
+  - The only hard constraint is that you use the accompanied API server to gather information about world countries.
+* **Frontend**:
   - Built with Angular 10
   - Aside from task INT-1004, the UI is nearly done and there isn't much you will need to change in the UI, unless you
     feel like like you want to change it.
   - The app is built and bundled together with the backend (same docker container).
-* Proxy:
-  - The proxy is off limits. You should not refactor the proxy, just make API calls to it from your
-    application's backend.
-  - The proxy relays requests to the [REST Countries API](https://restcountries.eu/).
-    - For instance, if the proxy's internal hostname is `countries-proxy`
-      and you make a call to `http://counties-proxy/rest/v2/{edge}`, the proxy would relay the request
-      to `https://restcountries.eu/rest/v2/{edge}`.
-    - You should be able to get information from the
-      [REST Countries API Documentation](https://restcountries.eu/). That said, the proxy may
-      alter some of the responses for arbitrary reasons.
+* **API Server**:
+  - The API server is off limits. You should not refactor it, but you will need to make HTTP calls to it from your
+    application's backend
+  - You can, (and should) read the API to understand how you can use it from your application's backend. 
+  - Please read the [API Reference](#api-reference) section to review the endpoints it exposes.
+
+#### API Reference
+
+##### `GET /rest/v2/all`
+
+This endpoint doesn't accept any parameter. It returns an exhaustive list of ISO Alpha 2 country codes.
+
+A `GET` request to `/rest/v2/all` might return the following response body:
+
+```json
+["CA", "US", "MX"]
+```
+
+##### `GET /rest/v2/<country_code>`
+
+URL Parameter(s):
+
+<table>
+    <thead>
+        <tr>
+            <th>Parameter</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><pre><code>country_code</code></pre></td>
+            <td>The ISO Alpha-2 country code (e.g., 'CA' for Canada)</td>
+        </tr>
+    </tbody>
+</table>
+
+A `GET` request to `/rest/v2/AD` will return the following response body:
+
+```json
+{
+  "name": "Andorra",
+  "alpha2Code": "AD",
+  "capital": "Andorra la Vella",
+  "population": 78014,
+  "latlng": [42.5, 1.5],
+  "borders": ["FRA", "ESP"],
+  "nativeName": "Andorra"
+}
+```

@@ -4,7 +4,7 @@ services:
     image: countries-web:latest
     ports:
       - '5000:5000'
-  countries-proxy:
-    image: countries-proxy:latest
+  countries-api:
+    image: countries-api:latest
     ports:
       - '5001:5001'

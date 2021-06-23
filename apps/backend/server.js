@@ -3,7 +3,7 @@
 const Hapi = require('@hapi/hapi');
 const inert = require('@hapi/inert');
 
-const BASE_API_PATH = 'http://countries-proxy/rest/v2';
+const BASE_API_PATH = 'http://countries-api:5001/rest/v2';
 
 const getAllCountries = async apiBasPath => {
   // TODO: implement
