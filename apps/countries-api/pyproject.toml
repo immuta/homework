@@ -1,15 +1,14 @@
 [tool.poetry]
-name = "countries-proxy"
+name = "countries-api"
 version = "0.1.0"
-description = "A proxy for the Applications team's homework assignment"
-authors = ["Immuta Applied Engineering <ae@immuta.com>"]
+description = "A countries API for Immuta's applications homework assignment"
+authors = ["Immuta Integrations <integrations@immuta.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
 Flask = "==1.1.2"
 Flask-Limiter = "==1.4"
 gevent = "^20.6.2"
-requests = "==2.24.0"
 Werkzeug = "==0.16.1"
 
 [tool.poetry.dev-dependencies]

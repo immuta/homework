@@ -1,11 +1,3 @@
-import logging
-
-from flask import Flask, jsonify, make_response, request
-from flask_limiter import HEADERS, Limiter
-from flask_limiter.util import get_remote_address
-from gevent.pywsgi import WSGIServer
-import requests
-
 ############################################################################
 #                                                                          #
 #  oooooooooo.                         o8o     .                           #
@@ -28,9 +20,14 @@ import requests
 #                                           That's not allowed :-)         #
 #                                                                          #
 ############################################################################
+import json
+import logging
 
+from flask import Flask, jsonify, make_response, request
+from flask_limiter import HEADERS, Limiter
+from flask_limiter.util import get_remote_address
+from gevent.pywsgi import WSGIServer
 
-COUNTRIES_API_BASE_URL = "https://restcountries.eu"
 
 app = Flask(__name__)
 limiter = Limiter(
@@ -42,28 +39,39 @@ limiter = Limiter(
 )
 
 
+def get_db():
+    with open("./db.json", "r") as buffer:
+        db_str = buffer.read()
+    return json.loads(db_str)
+
+
+db = get_db()
+
+
 @app.errorhandler(429)
 def rate_limit_handler(e):
-    return make_response(jsonify(error=F"Rate limit exceeded: {e.description}"), 429)
+    return make_response(jsonify(error=f"Rate limit exceeded: {e.description}"), 429)
 
 
 @app.route("/rest/v2/all")
 def get_all():
-    r = requests.get(f"{COUNTRIES_API_BASE_URL}/rest/v2/all?fields=alpha2Code", request.args)
-    return jsonify(r.json())
+    return jsonify(list(db.keys()))
 
 
 @app.route("/rest/v2", defaults={"path": ""})
-@app.route("/rest/v2/<path:path>")
-def get(path):
-    r = requests.get(f"{COUNTRIES_API_BASE_URL}/rest/v2/{path}", request.args)
-    return jsonify(r.json())
-
+@app.route("/rest/v2/<country_code>")
+def get(country_code):
+    if not country_code or len(country_code) != 2:
+        return jsonify(error="Invalid ISO Alpha 2 country code in the request"), 400
+    res = db.get(country_code)
+    if not res:
+        return jsonify(error=f"ISO Alpha 2 country code '{country_code}' was not found"), 404
+    return jsonify(res)
 
 
 if __name__ == "__main__":
     port = 5001
     logging.basicConfig(level="INFO")
     http_server = WSGIServer(("", port), app, log=app.logger)
-    app.logger.info("Proxy server listening to port %s", port)
+    app.logger.info("REST API server listening to port %s", port)
     http_server.serve_forever()
