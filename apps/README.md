@@ -83,7 +83,6 @@ priority, as outlined below:
             <td>
                 Since we're fetching data that are quite static, and especially given the overhead of the 
                 request rate limits (see ticket INT-1001), it makes sense to cache the results, either
-                request rate limits (see ticket INT-1001), it makes sense to cache the results, either
                 upon service startup or upon the first request, to improve the user experience a little.
                 I'm told we can use any data persistence method we'd like here. The important thing is
                 that we optimize the performance of requests to the backend.
