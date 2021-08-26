@@ -6,7 +6,7 @@ A data scientist at your company would like to evaluate where the state of Maryl
 data that comes back from Maryland's Open Data Portal is not in a format that your data scientist is happy about. She
 has already written an algorithm in Spark that reads parquet files and finds anomalies. The algorithm looks at spending
 within small geographical areas. The data scientist has decided to group areas with a five character geohash and usually
-runs the algorithm against a single geohash at a time. 
+runs the algorithm against a single geohash at a time.
 
 
 ## Assignment
@@ -32,4 +32,4 @@ you are comfortable with.
 ## Wrap it up
 
 When you are finished, tar.gz the Maven project directory (omitting any files that are transient/generated/IDE/etc), and send it to the person that emailed you the assignment.
-What you send should be "runnable" after we untar it. You may need to send a Google Drive or similar link if your email provider complains.
+What you send should be **runnable** after we untar it. You may need to send a Google Drive or similar link if your email provider complains.
