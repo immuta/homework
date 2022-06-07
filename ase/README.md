@@ -1,4 +1,4 @@
-# Immuta Candidate Homework - Internal Infrastructure Services
+# Immuta Candidate Homework - Application Support Engineering
 
 ## Overview
 
@@ -22,6 +22,10 @@ Your team is in the middle of building a data pipeline that extracts data from a
 specific indexes in Elasticsearch. All components must run in docker containers and be deployed
 from the provided `docker-compose.yml` file.
 
+The implementation was semi-completed by another engineer before they left the team, with sparse documentation
+to help you complete it. Your task is to put the rest of the pieces together to create a working product, and add
+any additional fixes that you see fit.
+
 ## Components
 
 ### Data API
@@ -34,11 +38,11 @@ from the provided `docker-compose.yml` file.
 
 ### Elasticsearch
 
-- Elasticsearch 7.4.0 must be deployed and reachable by the processor components.
+- Elasticsearch 7.17.0 must be deployed and reachable by the processor components.
 
 ### Kibana
 
-- Kibana 7.4.0 must be deployed and reachable by your local browser.
+- Kibana 7.16.0 must be deployed and reachable by your local browser.
 
 ### Processors
 
@@ -72,7 +76,7 @@ In order to complete this assignment, you must:
 
 - Implement the processor code. There is a python skeleton in the `processor` directory, but
     feel free to implement this in any language of your choosing.
-- Complete the processor docker build. There is a skeleton Dockerfile in the `processor` directory.
+- Run the processor docker build. There is a skeleton Dockerfile in the `processor` directory.
 - Deploy the Sentence Processor container. There is an existing entry in the docker-compose file
     for this container, however it may require some modification to work properly.
 - Deploy the Paragraph Processor container. There is currently no entry for this container in the
